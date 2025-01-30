@@ -12,3 +12,4 @@ c:\Users\phatchara.champatho\Documents\program2\WinterProject0205\vinterproj25\o
 c:\Users\phatchara.champatho\Documents\program2\WinterProject0205\vinterproj25\obj\Debug\net8.0\vinterproj25.pdb
 c:\Users\phatchara.champatho\Documents\program2\WinterProject0205\vinterproj25\obj\Debug\net8.0\vinterproj25.genruntimeconfig.cache
 c:\Users\phatchara.champatho\Documents\program2\WinterProject0205\vinterproj25\obj\Debug\net8.0\ref\vinterproj25.dll
+c:\Users\phatchara.champatho\Documents\program2\WinterProject0205\vinterproj25\obj\Debug\net8.0\vinterproj25.sourcelink.json

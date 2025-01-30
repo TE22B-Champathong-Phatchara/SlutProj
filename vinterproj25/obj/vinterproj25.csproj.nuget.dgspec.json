@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\phatchara.champatho\\Documents\\program2\\WinterProject0205\\vinterproj25\\vinterproj25.csproj": {}
+    "c:\\Users\\phatchara.champatho\\Documents\\program2\\WinterProject0205\\vinterproj25\\vinterproj25.csproj": {}
   },
   "projects": {
-    "C:\\Users\\phatchara.champatho\\Documents\\program2\\WinterProject0205\\vinterproj25\\vinterproj25.csproj": {
+    "c:\\Users\\phatchara.champatho\\Documents\\program2\\WinterProject0205\\vinterproj25\\vinterproj25.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phatchara.champatho\\Documents\\program2\\WinterProject0205\\vinterproj25\\vinterproj25.csproj",
+        "projectUniqueName": "c:\\Users\\phatchara.champatho\\Documents\\program2\\WinterProject0205\\vinterproj25\\vinterproj25.csproj",
         "projectName": "vinterproj25",
-        "projectPath": "C:\\Users\\phatchara.champatho\\Documents\\program2\\WinterProject0205\\vinterproj25\\vinterproj25.csproj",
+        "projectPath": "c:\\Users\\phatchara.champatho\\Documents\\program2\\WinterProject0205\\vinterproj25\\vinterproj25.csproj",
         "packagesPath": "C:\\Users\\phatchara.champatho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phatchara.champatho\\Documents\\program2\\WinterProject0205\\vinterproj25\\obj\\",
+        "outputPath": "c:\\Users\\phatchara.champatho\\Documents\\program2\\WinterProject0205\\vinterproj25\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -7,16 +7,17 @@ public class People
     
     public int Height;
     public int Weight;
-    public string DateAbirth;
+    public string DateOfbirth;
 
     public string Address;
 
     public string Attribute;
 
-    
-    public  void ImposterCheck()
+    public bool IsImposter;
+
+    public bool ImposterCheck()
     {
-        
+        return false;
     }
 
 }
