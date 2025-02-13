@@ -7,25 +7,41 @@ Console.WriteLine("\nHi, you must be the new security checker. \nYour duty is to
 Console.ReadLine();
 System.Console.WriteLine("Last time, some bastards just fake their name and the old security checker messed it up. \nSo, I've added more identity specification and I hope this time you won't disappoint me.");
 Console.ReadLine();
-System.Console.WriteLine("Well, since this is your first day I'll help to teach you how it works.");
+System.Console.WriteLine("Well, since this is your first day, those people are my staff and I'll help to teach you how it works.");
 System.Console.WriteLine("[Enter] when you're ready");
 Console.ReadLine();
 
 Console.Clear();
 
-int PersonInvited = 3;
 string Command;
 bool IsAsking;
 bool HidText = true;
 string ans;
-while(true)
+bool NameInfo = false;
+bool AgeInfo = false;
+bool DoBInfo = false;
+
+bool IsTurtorial = true;
+
+
+List<People> guests = new List<People>{  new InvitedPerson { Age = 24, DateOfbirth = "19/10/2001" },
+    new InvitedPerson { Age = 30, DateOfbirth = "05/06/1995" },
+    new InvitedPerson { Age = 27, DateOfbirth = "12/08/1997" }
+};
+
+// List<string> InvitedNames = 
+
+int GuestIndex = 0;
+
+
+while(GuestIndex < guests.Count)
 {
     System.Console.WriteLine("Day: 0\n");
-    System.Console.WriteLine($"Person invited: {PersonInvited}");
-    
-    People guest1 = new People{Name = "Jeff Wilson", Age = 24, DateOfbirth = "19/10/2001"};
+    System.Console.WriteLine($"Person invited: {guests.Count - GuestIndex}");
 
-    System.Console.WriteLine($"\nHi, I'm looking forwart to your party!");
+
+
+    System.Console.WriteLine($"\nHi, I'm looking forward to your party!");
     Console.ReadLine();
     System.Console.WriteLine("Now you'll need to check this guest information while asking to see if it matches or not.");
     
@@ -34,22 +50,57 @@ while(true)
         if (!HidText)
         {
             System.Console.WriteLine("Day: 0\n");
-            System.Console.WriteLine($"Person invited: {PersonInvited}");
+            System.Console.WriteLine($"Person invited: {guests.Count - GuestIndex}");
         }
-        System.Console.WriteLine("\nType [Check] to check information in my invited guest list and [Ask] to open asking options.\n");
+        if (NameInfo && AgeInfo && DoBInfo&&IsTurtorial)
+        {
+            while(true)
+            {
+                System.Console.WriteLine("Now you've checked and asked for all the information. Make sure you REMEMBER it well some questions you're able to ask twice but not thrice.\nIf more than that will count as \u001b[31munusual behaviour\u001b[0m. \nAll other such as false name, age, date of birth or even some unusual sentecnes and words also count.\nSo please pay attention.");
+                System.Console.WriteLine("\nIf you're sure that this guest can pass type [Pass] else [Kick]\n");
+                Command =  Console.ReadLine().ToLower();
+                if (Command.Contains("pa"))
+                {
+                    GuestIndex++; 
+                    Console.Clear();
+                    NameInfo = false; AgeInfo = false; DoBInfo = false;
+                    guests[GuestIndex].ResetQuestions();
+                    IsTurtorial = false;
+                    break;
+                }
+                
+
+               
+            }
+            continue;
+        }
+        else
+        {
+            System.Console.WriteLine("\nType [Check] to check information in my invited guest list and [Ask] to open asking options.\n");
+        }
         Command =  Console.ReadLine().ToLower();
         HidText = false;
 
+        if(Command == "pass" || Command.Contains("pa") && !IsTurtorial)
+        {
+            System.Console.WriteLine("Thanks for leting me in. \n[Enter] to continue.");
+            GuestIndex++;             
+            guests[GuestIndex].ResetQuestions();
+            Console.ReadLine();
+            Console.Clear();
+            continue;
+
+        }
         if(Command == "check" || Command.Contains("che"))
         {
             System.Console.WriteLine("\nDate: 10/2/2025\n");
-            System.Console.WriteLine($"\nInformation:\nName: {guest1.Name}\nAge: {guest1.Age}\nDate of Birth:{guest1.DateOfbirth}");
+            System.Console.WriteLine($"\nInformation:\nName: {guests[GuestIndex].Name}\nAge: {guests[GuestIndex].Age}\nDate of Birth:{guests[GuestIndex].DateOfbirth}");
             System.Console.WriteLine("\n[Enter] to continue");
             Console.ReadLine();
             Console.Clear();
             continue;
         }
-        if(Command == "ask" || Command.Contains("as"))
+        if(Command == "ask" )
         {
             IsAsking = true;
 
@@ -60,13 +111,22 @@ while(true)
                 Command = Console.ReadLine();
                 if(Command == "1")
                 {
-                    ans = guest1.AskingName();
+                    NameInfo = true;
+                    ans = guests[GuestIndex].AskingName();
                     AnswerRepeat(ans, IsAsking);
                     IsAsking = false;
                 }
                 if (Command == "2")
                 {
-                    ans = guest1.AskingAge();
+                    AgeInfo = true;
+                    ans = guests[GuestIndex].AskingAge();
+                    AnswerRepeat(ans, IsAsking);
+                    IsAsking = false;
+                }
+                if(Command == "3")
+                {
+                    DoBInfo = true;
+                    ans = guests[GuestIndex].AskingDoB();
                     AnswerRepeat(ans, IsAsking);
                     IsAsking = false;
                 }

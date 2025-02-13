@@ -69,4 +69,11 @@ public class People
         return "You already asked me that.";
     }
 
+    public void ResetQuestions()
+    {
+        NameAlreadyAsked = false;
+        AgeAlreadyAsked = false;
+        DoBAlreadyAsked = false;
+    }
+
 }
